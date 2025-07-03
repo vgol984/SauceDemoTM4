@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
+import pages.ProductsPage;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ public class BaseTest {
     WebDriver driver;
     SoftAssert softAssert;
     LoginPage loginPage;
+    ProductsPage productsPage;
 
     @BeforeMethod
     public void setup() {
@@ -31,6 +33,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         loginPage = new LoginPage(driver);
+        productsPage = new ProductsPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
