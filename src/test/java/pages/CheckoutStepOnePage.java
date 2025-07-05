@@ -20,11 +20,12 @@ public class CheckoutStepOnePage extends BasePage {
 
     public void open(){
         driver.get(BASE_URL + "/checkout-step-one.html");
+        driver.findElement(TITLE).isDisplayed();
     }
 
-    public boolean isPageOpened(){
+    /*public boolean isPageOpened(){
         return driver.findElement(TITLE).isDisplayed();
-    }
+    }*/
 
     public void checkoutInformation(String firstName, String lastName, String postalCode){
         driver.findElement(FIRST_NAME).sendKeys(firstName);
