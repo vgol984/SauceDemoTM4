@@ -33,7 +33,7 @@ public class CheckoutStepOnePage extends BasePage {
     }
 
     public String getErrorMessage(){
-        driver.findElement(ERROR_MESSAGE).getText();
+        return driver.findElement(ERROR_MESSAGE).getText();
     }
 
     public void cancelPage(){
