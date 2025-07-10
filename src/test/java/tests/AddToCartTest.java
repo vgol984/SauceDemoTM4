@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 public class AddToCartTest extends BaseTest {
     @Test
     public void addToCartTest() {
-
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

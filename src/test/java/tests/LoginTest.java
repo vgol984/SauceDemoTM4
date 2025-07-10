@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest{
-
     @Test
     public void checkLoginWithoutPassword(){
         loginPage.open();
@@ -15,12 +14,10 @@ public class LoginTest extends BaseTest{
                 "Epic sadface: Password is required",
                 "сообщение об ошибке не соответствует ожидаемому");
     }
-
     @Test
     public void checkLogin(){
         loginPage.open();
         loginPage.login("user-name", "password");
         assertTrue(productsPage.isPageOpened());
     }
-
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
-import pages.CheckoutStepOnePage;
+import pages.CheckoutInformation;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -14,13 +14,11 @@ import java.time.Duration;
 import java.util.HashMap;
 
 public class BaseTest {
-
     WebDriver driver;
     SoftAssert softAssert;
     LoginPage loginPage;
     ProductsPage productsPage;
-    CheckoutStepOnePage checkoutStepOnePage;
-
+    CheckoutInformation checkoutInformation;
     @BeforeMethod
     public void setup() {
         ChromeOptions options = new ChromeOptions();
@@ -37,7 +35,6 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }
-
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
