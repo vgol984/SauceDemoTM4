@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <listeners>
+        <listener class-name="tests.TestListener"/>
+        <listener class-name="tests.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="LoginTest" preserve-order="true">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name="AddToCartTest" preserve-order="true">
+        <classes>
+            <class name="tests.AddToCartTest"/>
+        </classes>
+    </test>
+    <test name="CheckoutInformationTest" preserve-order="true">
+        <classes>
+            <class name="tests.CheckoutInformationTest"/>
+        </classes>
+    </test>
+</suite>
