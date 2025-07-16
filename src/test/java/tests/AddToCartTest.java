@@ -2,9 +2,14 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class AddToCartTest extends BaseTest {
-    @Test
+    public AddToCartTest() {
+        softAssert = new SoftAssert();
+    }
+
+    @Test(description = "Успешное добавление товара в корзину", priority = 1, groups = {"smoke"})
     public void addToCartTest() {
         driver.get("https://www.saucedemo.com/");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
