@@ -36,7 +36,7 @@ public class CheckoutInformation extends BasePage {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-    @Step("Покинуть страницу")
+    @Step("Покинуть страницу проверки пользовательских данных")
     public void cancelPage(){
         driver.findElement(CANCEL_BUTTON).click();
     }

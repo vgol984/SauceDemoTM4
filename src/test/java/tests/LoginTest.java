@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -10,7 +11,11 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest{
 
-    @Test
+    @Test(description = "Проверка входа в систему без пароля")
+    @Severity(SeverityLevel.NORMAL)
+    @Owner("Goulubnichiy V.V.")
+    @Link("https://www.saucedemo.com/")
+    @Description("Проверка, что пользователь не может войти без пароля")
     public void checkLoginWithoutPassword(){
         loginPage.open();
         loginPage.login("user-name", "");
@@ -18,6 +23,7 @@ public class LoginTest extends BaseTest{
                 "Epic sadface: Password is required",
                 "сообщение об ошибке не соответствует ожидаемому");
     }
+
     @Test(description = "Успешная авторизация", priority = 1, groups = {"smoke"})
     public void checkLogin(){
         loginPage.open();
