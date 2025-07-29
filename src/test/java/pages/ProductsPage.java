@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductsPage extends BasePage{
     WebDriver driver = new ChromeDriver();
@@ -16,21 +17,27 @@ public class ProductsPage extends BasePage{
     }
 
     @Step("Открытие страницы товаров")
-    public void open(){
+    public ProductsPage open(){
         driver.get(BASE_URL + "/inventory.html");
     }
-    public boolean isPageOpened(){
-        return driver.findElement(TITLE).isDisplayed();
+    /*public boolean isPageOpened(){
+        return driver.findElement(TITLE).isDisplayed();*/
     }
 
     @Step("Добавить в корзину товар: Sauce Labs Bolt T-Shirt")
-    public void addToCartTShirt(){
+    public ProductsPage addToCartTShirt(){
         driver.findElement(ADD_TO_CART_T_SHIRT).click();
+        return this;
     }
 
     @Step("Перейти в корзину")
     public void goToCart(){
         driver.findElement(CART_BUTTON).click();
     }
+
+@Override
+public ProductsPage isPageOpened(){
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@name='SaveEdit']")));
+    return this;
 
 }
